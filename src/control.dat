@@ -1,0 +1,75 @@
+_______________________________________
+MESH DETAILS
+---------------------------------------
+
+imax = 51
+jmax = 51
+mesh_type = staggered
+
+_______________________________________
+PARAMETERS
+---------------------------------------
+
+rho = 1
+mu  = 0.05
+
+_______________________________________
+BOUNDARY CONDITIONS
+---------------------------------------
+Categories (keywords):
+    wall
+    tangent_velocity
+    inflow
+    outflow
+    periodic
+    simmetry
+
+i1 = wall
+im = wall
+j1 = wall
+jm = tangent_velocity
+
+# Tangent velocities (if apply)
+u_tangent_j1 = -9999
+u_tangent_jm = 1.0
+v_tangent_i1 = -9999
+v_tangent_im = -9999
+
+_______________________________________
+RUN OPTIONS
+---------------------------------------
+
+total_time_steps = 100
+dt = 0.0004
+max_error = 0.001
+max_iter = 1000
+beta_SOR = 1.2
+convection_method = central
+viscous_method = central
+
+_______________________________________
+INPUT DIRECTORIES
+---------------------------------------
+
+grid = ../grid_test.dat
+grid_header_rows = 10
+
+initial_solution = ../solu_ini.dat
+solu_header_rows = 13
+solu_ini_mesh_type = collocated
+
+_______________________________________
+OUTPUT DIRECTORIES
+---------------------------------------
+
+Example: folder1/folder2/ .../foldern/ 
+(last "/" is important for folders)
+
+tsave_restart = 10
+solu_restart = ../output/restart_files/
+solu_restart_mesh_type = staggered
+
+tsave_tecplot = 10
+tecplot_solu = ../output/tecfiles/
+
+
